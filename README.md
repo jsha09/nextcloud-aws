@@ -1,6 +1,6 @@
-# Terraform template to install Nextcloud on AWS wiuth EFS data store
+# Terraform template to install Nextcloud on AWS with EFS data store
 
-## Our plan, brain dumnp for now
+## Our plan, brain dump for now
 
 ### Networking 
 - VPC Creation, isolated from other VPC 
@@ -17,5 +17,5 @@
 - Private subnet
 
 ### Data store 
-- EFS Remote data store- 
+- EFS Remote data store 
 - IAM role for EFS access
