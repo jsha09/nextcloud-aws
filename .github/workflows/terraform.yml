@@ -1,10 +1,9 @@
 name: terraform_complicance_check
 on: [push]
 jobs:
-    terraform:
-        name: terraform CI
-        runs-on: ubuntu-latest
-
+  terraform:
+    name: terraform CI
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
@@ -13,7 +12,7 @@ jobs:
         id: plan
         run: |
           terraform init && terraform plan -out=plan.out && terraform show -json plan.out > plan.out.json
-      
+
       - name: terraform-compliance
         uses: terraform-compliance/github_action@main
         with:
