@@ -9,7 +9,7 @@ resource "aws_efs_file_system" "nextcloud-efs" {
 }
 
 resource "aws_efs_mount_target" "nextcloud-mount-target" {
-  count = length(var.vpc_private_subnets)
+  count          = length(var.vpc_private_subnets)
   file_system_id = aws_efs_file_system.nextcloud-efs.id
-  subnet_id = "${element(var.vpc_private_subnets, count.index)}"
+  subnet_id      = element(var.vpc_private_subnets, count.index)
 }
