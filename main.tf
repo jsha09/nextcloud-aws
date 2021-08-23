@@ -21,4 +21,6 @@ module "storage" {
   source = "./modules/storage"
 
   vpc_private_subnets = module.vpc.private_subnets
+  vpc_id              = module.vpc.vpc_id
+  vpc_cidr = module.vpc.vpc_cidr_block
 }
